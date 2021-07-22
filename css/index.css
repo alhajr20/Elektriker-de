@@ -228,9 +228,26 @@ body {
 
 /* header end */
 /* promo */
+.promo {
+  position: relative;
+}
+
+.promo::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("https://media.istockphoto.com/photos/technician-repairing-fuse-box-with-screwdriver-picture-id1094164588?k=6&m=1094164588&s=612x612&w=0&h=AxQwkg7TgM5Msl_C_esA-wzxNrWT_6CV4pf_gGC6GJI=") center/cover no-repeat;
+  z-index: -1;
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
+}
+
 .promo__wrapper {
   padding: 144px 24px 224px;
-  color: grey;
+  color: #fff;
 }
 
 .promo__info {
@@ -302,6 +319,7 @@ body {
   text-align: center;
   font-size: 30px;
   color: grey;
+  margin-top: 50px;
 }
 
 .about__wrapper {
