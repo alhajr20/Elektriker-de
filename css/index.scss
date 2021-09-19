@@ -590,3 +590,75 @@ body {
 }
 
 /* footer end */
+
+/* questions */
+
+.questions {
+    &__wrapper {
+        padding: 100px 0;
+    }
+
+    &__item {
+        .trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: $main-color;
+            padding: 20px;
+            color: #fff;
+            // border-radius: 5px;
+            border: 1px solid #fff;
+            cursor: pointer;
+            font-size: 20px;
+            transition: all .5s;
+
+            svg {
+                width: 20px;
+                height: 20px;
+                transition: all .5s;
+            }
+        }
+
+        .answer {
+            display: none;
+            padding: 20px 0;
+            line-height: 40px;
+            background-color: #fff;
+        }
+    }
+
+    &__item-active {
+        .trigger {
+            svg {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .answer {
+            display: block;
+            animation-name: answerShow;
+            animation-duration: .5s;
+        }
+
+        @keyframes answerShow {
+            0% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .questions {
+        &__item {
+            .trigger {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+/* questions end */

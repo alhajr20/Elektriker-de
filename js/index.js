@@ -157,6 +157,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     /* Slow Links end */
 
+    /* Header Fixed */
+
     const headerSection = document.querySelector('.header');
 
     window.addEventListener("scroll", () => {
@@ -165,5 +167,22 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             headerSection.classList.remove('header-fixed');
         };
+    });
+
+    /* Header Fixed end */
+
+    /* Accordion */
+
+    document.querySelectorAll('.questions__item .trigger').forEach(item => {
+        item.addEventListener('click', () => {
+            const parent = item.parentNode;
+
+            if (parent.classList.contains('questions__item-active')) {
+                parent.classList.remove('questions__item-active');
+            } else {
+                document.querySelectorAll('.questions__item').forEach(child => child.classList.remove('questions__item-active'));
+                parent.classList.add('questions__item-active');
+            }
+        });
     });
 });
